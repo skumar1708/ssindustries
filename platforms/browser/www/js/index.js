@@ -33,6 +33,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+		 window.open = cordova.InAppBrowser.open;
         app.receivedEvent('deviceready');
 		
     },
@@ -50,10 +51,6 @@ var app = {
 };
 
 function pdfGenerator(){
-	pdf.htmlToPDF({
-            data: "<html> <h1>  Hello World  </h1> </html>",
-            documentSize: "A4",
-            landscape: "portrait",
-            type: "base64"
-        }, null, null);
+	var ref = cordova.InAppBrowser.open('www.google.com', '_self', 'location=no');
+	
 }
