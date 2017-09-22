@@ -14,7 +14,10 @@ $city_name = mysqli_real_escape_string($link, $_REQUEST['city_name']);
 // attempt insert query execution
 $sql = "INSERT INTO city (cityname) VALUES ('$city_name')";
 if(mysqli_query($link, $sql)){
-    echo "Records added successfully.";
+    echo "Records added successfully.
+			<script type=\"text/javascript\">
+				window.close();
+            </script>";
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 }
