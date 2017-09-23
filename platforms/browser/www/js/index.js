@@ -51,5 +51,17 @@ var app = {
 };
 
 function recordData(){
-	var ref = cordova.InAppBrowser.open('http://www.chellfy.com/insert.html', '_self','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
+	var ref = cordova.InAppBrowser.open('http://www.chellfy.com/insert.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
+	
+	ref.addEventListener('loadstart', function(event) {
+		alert('started');
+		var options = { dimBackground: true };
+		SpinnerPlugin.activityStart("Loading...", options);
+	});
+	ref.addEventListener('loadstop', function(event) {
+		SpinnerPlugin.activityStop();
+	  if(event.url.indexOf("insert.php") > -1) {
+		ref.close();
+	  }
+	});
 }

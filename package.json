@@ -30,7 +30,8 @@
             "cordova-plugin-statusbar": {},
             "cordova-plugin-vibration": {},
             "cordova-plugin-whitelist": {},
-            "cordova-pdf-generator": {}
+            "cordova-pdf-generator": {},
+            "cordova-plugin-spinner": {}
         }
     },
     "dependencies": {
@@ -54,6 +55,7 @@
         "cordova-plugin-statusbar": "~2.1.2",
         "cordova-plugin-vibration": "~2.1.0",
         "cordova-plugin-whitelist": "~1.2.1",
-        "cordova-pdf-generator": "~1.2.1"
+        "cordova-pdf-generator": "~1.2.1",
+        "cordova-plugin-spinner": "~1.1.0"
     }
 }
