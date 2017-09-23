@@ -52,5 +52,4 @@ var app = {
 
 function recordData(){
 	var ref = cordova.InAppBrowser.open('http://www.chellfy.com/insert.html', '_self','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
-});
 }
