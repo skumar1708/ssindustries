@@ -52,9 +52,5 @@ var app = {
 
 function recordData(){
 	var ref = cordova.InAppBrowser.open('http://www.chellfy.com/insert.html', '_self','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
-	ref.addEventListener('loadstart', function(event) {
-	  if(event.url.indexOf("insert.php") > -1) {
-		ref.close();
-	  }
 });
 }
