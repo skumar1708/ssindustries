@@ -34,8 +34,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 		 //window.open = cordova.InAppBrowser.open;
-        app.receivedEvent('deviceready');
-		
+        app.receivedEvent('deviceready');	
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -74,7 +73,6 @@ function openScreen(screen){
 		default:
 			break;
 	}
-	
 	ref.addEventListener('loadstart', function(event) {
 		alert('started');
 		var options = { dimBackground: true };
