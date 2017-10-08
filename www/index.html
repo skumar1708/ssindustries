@@ -43,16 +43,25 @@
 
 <body>
     <div class="app">
-        <h1>PhoneGap</h1>
+        <h1>Shri Shakti</h1>
+		<h3>Industries</h3>
         <div id="deviceready" class="blink">
-            <button onclick="recordData()">Order</button>
-			<button>Delivery</button>
-			<button>RM</button>
-			<button>FG</button>
+		<div class="accordion">Order</div>
+			<div class="panel">
+				<button onclick="openScreen('new-order')">Booking</button>
+				<button onclick="openScreen('manage-order')">Delivery</button>
+			</div>
+		<div class="accordion">Raw Material(RM)</div>
+			<div class="panel">
+				<button onclick="openScreen('request-rm')">RM Booking</button>
+				<button onclick="openScreen('manage-rm')">RM Procurement</button>
+			</div>
+			<button onclick="openScreen('finsh-goods')">Finish Goods</button>
         </div>
     </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+	 <script type="text/javascript" src="js/accordion.js"></script>
     <script type="text/javascript">
         app.initialize();
     </script>
