@@ -34,8 +34,8 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 		 //window.open = cordova.InAppBrowser.open;
-        app.receivedEvent('deviceready');
-		
+		 openScreen('home');
+        app.receivedEvent('deviceready');	
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -54,29 +54,31 @@ function openScreen(screen){
 	var ref;
 	switch(screen){
 		case "new-order":
-			ref = cordova.InAppBrowser.open('http://www.chellfy.com/insert.html', '_blank','location=yes,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
+			ref = cordova.InAppBrowser.open('http://www.chellfy.com/insert.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
 			break;
 		case "manage-order":
-			ref = cordova.InAppBrowser.open('http://www.chellfy.com/order-book.html', '_blank','location=yes,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
+			ref = cordova.InAppBrowser.open('http://www.chellfy.com/order-book.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
 			break;
 		case "request-rm":
-			ref = cordova.InAppBrowser.open('http://www.chellfy.com/insert-raw-material.html', '_blank','location=yes,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
+			ref = cordova.InAppBrowser.open('http://www.chellfy.com/insert-raw-material.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
 			break;
 		case "manage-rm":
-			ref = cordova.InAppBrowser.open('http://www.chellfy.com/raw-material-details.html', '_blank','location=yes,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
+			ref = cordova.InAppBrowser.open('http://www.chellfy.com/raw-material-details.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
 			break;
 		case "finsh-goods":
-			ref = cordova.InAppBrowser.open('http://www.chellfy.com/finish-goods.html', '_blank','location=yes,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
+			ref = cordova.InAppBrowser.open('http://www.chellfy.com/finish-goods.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
 			break;
-		case "new-order":
+		case "inventory":
+			ref = cordova.InAppBrowser.open('http://www.chellfy.com/inventory.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
+			break;
 			
+		case "home":
+			ref = cordova.InAppBrowser.open('http://www.chellfy.com/home.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
 			break;
 		default:
 			break;
 	}
-	
 	ref.addEventListener('loadstart', function(event) {
-		alert('started');
 		var options = { dimBackground: true };
 		SpinnerPlugin.activityStart("Loading...", options);
 	});

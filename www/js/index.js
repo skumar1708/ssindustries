@@ -34,6 +34,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 		 //window.open = cordova.InAppBrowser.open;
+		 openScreen('home');
         app.receivedEvent('deviceready');	
     },
     // Update DOM on a Received Event
@@ -71,6 +72,8 @@ function openScreen(screen){
 			ref = cordova.InAppBrowser.open('http://www.chellfy.com/inventory.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
 			break;
 			
+		case "home":
+			ref = cordova.InAppBrowser.open('http://www.chellfy.com/home.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
 			break;
 		default:
 			break;
