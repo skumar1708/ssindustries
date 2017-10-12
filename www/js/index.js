@@ -84,8 +84,28 @@ function openScreen(screen){
 	});
 	ref.addEventListener('loadstop', function(event) {
 		SpinnerPlugin.activityStop();
+		document.getElementsByClassName('app')[0].style.display = '';
 	  /* if(event.url.indexOf("insert.php") > -1) {
 		ref.close();
 	  } */
+	});
+	ref.addEventListener('exit', function(event) {
+		swal({
+									  title: '',
+									  text: "DO you really want to exit?",
+									  type: 'success',
+									  showCancelButton: true,
+									  confirmButtonColor: '#3085d6',
+									  cancelButtonColor: '#d33',
+									  confirmButtonText: 'Yes',
+									  cancelButtonText: 'No',
+									  confirmButtonClass: 'btn btn-success',
+									  cancelButtonClass: 'btn btn-danger',
+									  buttonsStyling: true
+									}).then(function () {
+									  System.exit();
+									}, function (dismiss) {
+									  ref = cordova.InAppBrowser.open('http://www.chellfy.com/home.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
+									});
 	});
 }
