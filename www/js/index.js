@@ -73,7 +73,7 @@ function openScreen(screen){
 			break;
 			
 		case "home":
-			ref = cordova.InAppBrowser.open('http://www.chellfy.com/home.html', '_blank','location=yes,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
+			ref = cordova.InAppBrowser.open('http://www.chellfy.com/home.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
 			break;
 		default:
 			break;
