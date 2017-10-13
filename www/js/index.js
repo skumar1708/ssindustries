@@ -103,7 +103,7 @@ function openScreen(screen){
 									  cancelButtonClass: 'btn btn-danger',
 									  buttonsStyling: true
 									}).then(function () {
-									  System.exit();
+									   navigator.app.exitApp();
 									}, function (dismiss) {
 									  openScreen('home');
 									});
