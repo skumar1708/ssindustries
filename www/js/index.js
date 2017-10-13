@@ -73,7 +73,7 @@ function openScreen(screen){
 			break;
 			
 		case "home":
-			ref = cordova.InAppBrowser.open('http://www.chellfy.com/home.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
+			ref = cordova.InAppBrowser.open('http://www.chellfy.com/home.html', '_blank','location=yes,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
 			break;
 		default:
 			break;
@@ -84,13 +84,13 @@ function openScreen(screen){
 	});
 	ref.addEventListener('loadstop', function(event) {
 		SpinnerPlugin.activityStop();
-		document.getElementsByClassName('app')[0].style.display = '';
+		//document.getElementsByClassName('exitConfirm')[0].style.display = '';
 	  /* if(event.url.indexOf("insert.php") > -1) {
 		ref.close();
 	  } */
 	});
 	ref.addEventListener('exit', function(event) {
-		swal({
+						swal({
 									  title: '',
 									  text: "DO you really want to exit?",
 									  type: 'success',
@@ -105,7 +105,8 @@ function openScreen(screen){
 									}).then(function () {
 									  System.exit();
 									}, function (dismiss) {
-									  ref = cordova.InAppBrowser.open('http://www.chellfy.com/home.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
+									  openScreen('home');
 									});
-	});
+		});
+
 }
