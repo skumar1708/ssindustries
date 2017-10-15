@@ -34,6 +34,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 		 //window.open = cordova.InAppBrowser.open;
+		 StatusBar.hide
 		 openScreen('home');
         app.receivedEvent('deviceready');	
     },
