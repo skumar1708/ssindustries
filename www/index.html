@@ -70,8 +70,8 @@
             if(navigator.onLine){
                 app.initialize();
             }else{
-                var div = document.createElement('div');
-                var btn = document.createElement('button');
+                let div = document.createElement('div');
+                let btn = document.createElement('button');
                 btn.innerHTML ="Retry";
                 btn.addEventListener('click',retry);
 
@@ -85,6 +85,8 @@
             }
             function retry(){
                     if(navigator.onLine){
+                        let child = document.querySelector('.no-internet');
+                        document.body.removeChild(child);
                          app.initialize();
                       }
             }
