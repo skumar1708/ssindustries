@@ -1,5 +1,7 @@
 .no-internet{
-    padding-top: 50%;
+    padding-top: 25%;
+    text-align: center;
+    font-size: larger;
 }
 .no-internet > img{
     width:100%;

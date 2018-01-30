@@ -67,14 +67,15 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 	 <script type="text/javascript">
-            if(navigator.onLine){
+            if(navigator.online){
                 app.initialize();
             }else{
                 var div = document.createElement('div');
-                var img = document.createElement('img');
-                img.src = "/img/woops.png";
+                // var img = document.createElement('img');
+                // img.src = "/img/woops.png";
                 div.classList.add('no-internet');
-                div.append(img);
+                div.innerHTML = "You are offline !!!"
+                //div.append(img);
                 document.body.append(div);
             }
     </script>
