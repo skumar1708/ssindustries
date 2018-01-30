@@ -1,0 +1,6 @@
+.no-internet{
+    padding-top: 50%;
+}
+.no-internet > img{
+    width:100%;
+}
