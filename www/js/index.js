@@ -93,7 +93,7 @@ function openScreen(screen){
 	ref.addEventListener('exit', function(event) {
 						swal({
 									  title: '',
-									  text: "DO you really want to exit?",
+									  text: "Do you really want to exit?",
 									  type: 'success',
 									  showCancelButton: true,
 									  confirmButtonColor: '#3085d6',
