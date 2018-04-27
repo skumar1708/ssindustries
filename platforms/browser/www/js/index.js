@@ -34,6 +34,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 		 //window.open = cordova.InAppBrowser.open;
+		 StatusBar.hide
 		 openScreen('home');
         app.receivedEvent('deviceready');	
     },
@@ -54,26 +55,26 @@ function openScreen(screen){
 	var ref;
 	switch(screen){
 		case "new-order":
-			ref = cordova.InAppBrowser.open('http://www.chellfy.com/insert.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
+			ref = cordova.InAppBrowser.open('http://www.onsgrocery.com/code/insert.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
 			break;
 		case "manage-order":
-			ref = cordova.InAppBrowser.open('http://www.chellfy.com/order-book.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
+			ref = cordova.InAppBrowser.open('http://www.onsgrocery.com/code/order-book.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
 			break;
 		case "request-rm":
-			ref = cordova.InAppBrowser.open('http://www.chellfy.com/insert-raw-material.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
+			ref = cordova.InAppBrowser.open('http://www.onsgrocery.com/code/insert-raw-material.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
 			break;
 		case "manage-rm":
-			ref = cordova.InAppBrowser.open('http://www.chellfy.com/raw-material-details.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
+			ref = cordova.InAppBrowser.open('http://www.onsgrocery.com/code/raw-material-details.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
 			break;
 		case "finsh-goods":
-			ref = cordova.InAppBrowser.open('http://www.chellfy.com/finish-goods.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
+			ref = cordova.InAppBrowser.open('http://www.onsgrocery.com/code/finish-goods.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
 			break;
 		case "inventory":
-			ref = cordova.InAppBrowser.open('http://www.chellfy.com/inventory.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
+			ref = cordova.InAppBrowser.open('http://www.onsgrocery.com/code/inventory.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
 			break;
 			
 		case "home":
-			ref = cordova.InAppBrowser.open('http://www.chellfy.com/home.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
+			ref = cordova.InAppBrowser.open('http://www.onsgrocery.com/code/home.html', '_blank','location=no,zoom=no,disallowoverscroll=yes,clearsessioncache=yes');
 			break;
 		default:
 			break;
@@ -92,7 +93,7 @@ function openScreen(screen){
 	ref.addEventListener('exit', function(event) {
 						swal({
 									  title: '',
-									  text: "DO you really want to exit?",
+									  text: "Do you really want to exit?",
 									  type: 'success',
 									  showCancelButton: true,
 									  confirmButtonColor: '#3085d6',
